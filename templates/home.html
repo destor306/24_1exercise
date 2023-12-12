@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{%block title%}Home Page{%endblock%}
+
+{%block content%}
+
+{%for pet in pets%}
+    <div class="container">
+        <a href="/pets/{{pet.id}}"><h3>{{pet.name}}</h3></a>
+        
+        <img src="{{pet.photo_url}}" alt="{{pet.name}}">
+        <p>Specie: {{pet.species}}</p>
+        <p>Status : {{'Available' if pet.available else 'Not Avilable'}}</p>
+    </div>
+{%endfor%}
+<a href="\add" class="btn btn-success btn-lg">Add Pet</a>
+{%endblock%} 
